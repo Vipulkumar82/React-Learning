@@ -22,9 +22,13 @@ function Todo(){
       <button className='button' onClick={addTask}>Add Task</button>
       </form>
 
-      <span>{tasks}</span>
+      <div className='Tasks'>
+        {tasks.map((task, index)=>(
+          <ol>
+            <li key={index}>{task}</li>
+          </ol>
+      ))}</div>
     </section>
-
   )
 } 
 
