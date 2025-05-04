@@ -1,0 +1,19 @@
+
+.parent{
+    height: 100vh;
+    width: 100vw;
+    background-color: #63606081;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+.input{
+    padding: 5px 20px;
+    background-color: #e2caca;
+}
+.button{
+    padding: 2px;
+    background-color: #e0d571;
+}
