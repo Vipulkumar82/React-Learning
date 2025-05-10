@@ -1,0 +1,9 @@
+.user-container{
+    display: flex;
+    background-color: #e69e9e;
+    padding: 20px;
+}
+#user-img{
+    height: 400px;
+    object-fit: cover;    
+}
