@@ -4,7 +4,7 @@ function Card(props) {
   return (
     <div className='cardMain'>
       <input type='text' onChange={(e)=> props.setName(e.currentTarget.value)} />
-      <p>Here is the card output : {props.name}</p>
+      <p>Here is the card output {props.title} : {props.name}</p>
     </div>
   )
 }

@@ -16,8 +16,9 @@ function App() {
     <>
     <h1>Learn About StateLifting</h1>
     <div className="main">
-      <Card name={name} setName={setName}/>
-      <p>Output from parent: {name}</p>
+      <Card title='Card1' name={name} setName={setName}/>
+      <Card title='Card2' name={name} setName={setName}/>
+      {/* <p>Output from parent: {name}</p> */}
     
     </div>
     </>
