@@ -8,15 +8,35 @@ import LogoutBtn from './Components/LogoutBtn';
 function App() {
   const [isLoggedIn, setLoggedIn]=useState(false);
 
+      //Early Access
+      if(!isLoggedIn){
+        return(
+          <div>
+            <h1>Har Har Mahadev</h1>
+            <LoginBtn/>
+          </div>
+        )
+      }
 
 
-      //Using Ternary Operator
+      //Logical Operartor
 
       return(
         <div>
-          {isLoggedIn ? <LogoutBtn/> : <LoginBtn/>}
+          <h1>Jay siya Ram</h1>
+        <div>
+          {isLoggedIn && <LogoutBtn/>}
+        </div>
         </div>
       )
+
+      //Using Ternary Operator
+
+      // return(
+      //   <div>
+      //     {isLoggedIn ? <LogoutBtn/> : <LoginBtn/>}
+      //   </div>
+      // )
 
     //if else conditional Statement
 
