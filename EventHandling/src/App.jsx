@@ -18,12 +18,12 @@ function App() {
   }
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      
+
+      {/* <form onSubmit={handleSubmit}>
         <input type="text" onChange={handleInputChange} />
         <button type='submit'>Submit</button>
-      </form>
-
-
+      </form> */}
 
       {/* <p onMouseOver={handleMouseOver} >This is Para</p>
 
