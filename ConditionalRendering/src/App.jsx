@@ -6,7 +6,17 @@ import LoginBtn from './Components/LoginBtn';
 import LogoutBtn from './Components/LogoutBtn';
 
 function App() {
-  const [isLoggedIn, setLoggedIn]=useState(true);
+  const [isLoggedIn, setLoggedIn]=useState(false);
+
+
+
+      //Using Ternary Operator
+
+      return(
+        <div>
+          {isLoggedIn ? <LogoutBtn/> : <LoginBtn/>}
+        </div>
+      )
 
     //if else conditional Statement
 
