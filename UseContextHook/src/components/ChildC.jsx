@@ -1,8 +1,23 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { ThemeContext } from '../App'
+
+// import { UserContext } from '../App'
 
 const ChildC = () => {
+    // const Mera = useContext(UserContext);
+    const theme = useContext(ThemeContext);
+    function handleClick(){
+
+    }
   return (
-    <h1>Ram Ram Bhai</h1>
+    <>
+      <div>
+        <button onClick={handleClick}>
+          Change Theme
+        </button>
+      </div>
+    </>
+
   )
 }
 
