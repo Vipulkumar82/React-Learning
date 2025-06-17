@@ -5,9 +5,14 @@ import { ThemeContext } from '../App'
 
 const ChildC = () => {
     // const Mera = useContext(UserContext);
-    const theme = useContext(ThemeContext);
+    const{ theme, setTheme } = useContext(ThemeContext);
     function handleClick(){
-
+      if(theme=== 'light'){
+        setTheme('dark')
+      }else{
+        setTheme('light')
+      }
+        // setTheme((prev) => (prev === 'light' ? 'dark' : 'light'));
     }
   return (
     <>

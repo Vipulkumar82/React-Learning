@@ -1,9 +1,10 @@
 body{
-    background-color: #504e4e;
+    background-color: #93aadc;
+    
 }
 #container{
-    height: 100vh;
-    width: 100vw;
+    height: 500px;
+    width: 600px;
     border: 2px solid blue;
     display: flex;
     flex-direction: column;

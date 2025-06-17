@@ -6,7 +6,7 @@ import ChildA from './components/ChildA'
 const ThemeContext = createContext();
 
 function handleTheme(){
-  
+  setTheme((prev) => (prev === 'light' ? 'dark' : 'light'));
 }
 
 function App() {
@@ -23,9 +23,9 @@ function App() {
 
   return (
     <>
-      <ThemeContext.Provider value={theme}>
-        <div id="container">
-          <button onClick={handleTheme} >Change Theme</button>
+      <ThemeContext.Provider value={{ theme, setTheme }}>
+        <div id="container" style={{background:theme==='light'?"beige":"black"}}>
+          {/* <button onClick={handleTheme} >Change Theme</button> */}
           <ChildA/>
         </div>
       </ThemeContext.Provider>
