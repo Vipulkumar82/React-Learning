@@ -1,7 +1,16 @@
 import React from 'react';
 import '../styles/components.css';
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
+
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate("/about");
+  }
+
+
   return (
     <div className="page-container">
       <div className="hero-section">
@@ -43,7 +52,24 @@ const Home = () => {
           <p className="page-text">Build iOS and Android apps</p>
         </div>
       </div>
+
+      <button 
+      onClick={handleClick}  
+      style={{
+            backgroundColor: '#2c3e50',
+            color: 'white',
+            padding: '10px 20px',
+            border: 'none',
+            borderRadius: '5px',
+            marginTop: '1rem',
+            cursor: 'pointer'
+          }}>
+        Move to About page
+      </button>
+
     </div>
+    
+
   );
 };
 

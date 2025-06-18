@@ -5,6 +5,7 @@ import About from './Components/About';
 import Dashboard from './Components/Dashboard';
 import Navbar from './Components/Navbar';
 import Courses from './Components/Courses';
+import ParamComp from './Components/ParamComp';
 
 const router = createBrowserRouter(
   [
@@ -40,6 +41,14 @@ const router = createBrowserRouter(
         <Courses/>
       </div>
     },
+    {
+      path:"/courses/:id",
+      element:
+      <div>
+        <Navbar/>
+        <ParamComp/>
+      </div>
+    }
   ]
 );
 

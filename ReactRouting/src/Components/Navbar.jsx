@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import '../styles/components.css';
 
 const Navbar = () => {
   return (
@@ -17,14 +18,28 @@ const Navbar = () => {
         justifyContent: 'space-between',
         alignItems: 'center'
       }}>
-        <Link to="/" style={{ color: '#fff', textDecoration: 'none', fontSize: '1.5rem' }}>
+        <NavLink to="/" 
+          className={({isActive}) => isActive ? "nav-brand active-link" : "nav-brand"}
+          style={{ color: '#fff', textDecoration: 'none', fontSize: '1.5rem' }}>
           EduTech
-        </Link>
+        </NavLink>
         <div style={{ display: 'flex', gap: '2rem' }}>
-          <Link to="/" style={{ color: '#fff', textDecoration: 'none' }}>Home</Link>
-          <Link to="/courses" style={{ color: '#fff', textDecoration: 'none' }}>Courses</Link>
-          <Link to="/about" style={{ color: '#fff', textDecoration: 'none' }}>About</Link>
-          <Link to="/dashboard" style={{ color: '#fff', textDecoration: 'none' }}>Dashboard</Link>
+          <NavLink to="/" 
+            className={({isActive}) => isActive ? "nav-link active-link" : "nav-link"}>
+            Home
+          </NavLink>
+          <NavLink to="/courses" 
+            className={({isActive}) => isActive ? "nav-link active-link" : "nav-link"}>
+            Courses
+          </NavLink>
+          <NavLink to="/about" 
+            className={({isActive}) => isActive ? "nav-link active-link" : "nav-link"}>
+            About
+          </NavLink>
+          <NavLink to="/dashboard" 
+            className={({isActive}) => isActive ? "nav-link active-link" : "nav-link"}>
+            Dashboard
+          </NavLink>
         </div>
       </div>
     </nav>
