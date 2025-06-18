@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/components.css';
+import { Outlet } from 'react-router-dom';
 
 const Dashboard = () => {
   return (
@@ -25,6 +26,9 @@ const Dashboard = () => {
           <p className="page-text">Quiz - 1 week</p>
         </div>
       </div>
+      <Outlet/>
+
+      {/* This Outlet will render nested routes for the dashboard */}
     </div>
   );
 };
