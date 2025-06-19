@@ -11,23 +11,29 @@ function App() {
 
   } = useForm();
 
+  function onSubmit(data) {
+    console.log(data);
+  }
+
   return (
     <>
-      <form>
+      <form onSubmit={handleSubmit(onSubmit)} >
         <div>
           <label>First Name: </label>
-          <input/>
+          <input {...register('firstName')} />
         </div>
         <br/>
         <div>
           <label>Middle Name: </label>
-          <input/>
+          <input {...register('middleName')} />
         </div>
         <br/>
         <div>
           <label>Last Name: </label>
-          <input/>
+          <input {...register('lastName')} />
         </div>
+        <br/>
+        <input type="submit" />
       </form>
     </>
   )
