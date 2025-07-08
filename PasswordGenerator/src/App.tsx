@@ -1,11 +1,13 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState, useRef } from "react";
 import "./App.css";
 
 function App() {
-  const [length, setLength] = useState(8);
+  const [length, setLength] = useState<number>(8);
   const [numberAllowed, setNumberAllowed] = useState(false);
   const [characterAllowed, setCharacterAllowed] = useState(false);
   const [password, setPassword] = useState("");
+
+  const passwordRef = useRef(null);
 
   const passwordGenerator = useCallback(() => {
     let pass = "";
@@ -13,7 +15,7 @@ function App() {
 
     if (numberAllowed) str += "0123456789"
     if (characterAllowed) str += "!@#$%^&*{}[]?`~"
-
+    console.log('hello')
     for (let i = 1; i <=length; i++) {
       let char = Math.floor(Math.random() * str.length + 1);
       pass += str.charAt(char);
@@ -21,6 +23,12 @@ function App() {
     setPassword(pass);
 
   }, [length, numberAllowed, characterAllowed, setPassword]);
+
+  const copyPasswordToClipboard = useCallback(() => {
+    passwordRef.current?.select();   //for selection show
+    passwordRef.current?.setSelectionRange(0, 10); //Key cuttor taking range 
+    window.navigator.clipboard.writeText(password)
+  },[password])
 
   useEffect(()=>{
     passwordGenerator();
@@ -39,9 +47,12 @@ function App() {
             type="input"
             value={password}
             readOnly
-            // ref={passwordRef}
+            ref={passwordRef}
+            
           />
-          <button className="px-4 py-2 h-full bg-orange-800 absolute right-0 top-0">
+          <button 
+          onClick={copyPasswordToClipboard}
+          className="cursor-pointer hover:bg-blue-300 hover:text-black hover:transform px-4 py-2 h-full bg-orange-500 absolute right-0 top-0">
             Copy
           </button>
         </div>
@@ -52,8 +63,8 @@ function App() {
           type="range"
           min={6}
           max={100}
-          onChange={(e: any) => {
-            setLength(e.target.value);
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+            setLength(Number(e.target.value));
           }}
           value={length}
         />
